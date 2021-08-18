@@ -12,10 +12,20 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  // use the .map method on the tutorials to return a new array
    return tutorials.map(sentance => {
-     const words = sentance.split(" ")
-     const capSents = words.map(word => word[0].toUpperCase)
-
+     const words = sentance.split(" ");
+     const capWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+      const sentances = capWords.join(' ');
+      return sentances
    })
 }
+
+// const titleCased = () => {
+//   return tutorials.map(title => {
+//     const words = title.split(' ');
+//     const capitalizedWords =
+//       words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+//     const newTitle = capitalizedWords.join(' ');
+//     return newTitle;
+//   });
+// }
